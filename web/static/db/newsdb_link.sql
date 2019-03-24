@@ -1,0 +1,9 @@
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (1, '中软', '1234546@qq.com', 'http://www.chinasofti.com', 2);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (2, '百度', '1234546@qq.com', 'http://www.baidu.com', 1);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (3, 'CSDN', '1234546@qq.com', 'http://www.csdn.com', 3);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (6, '超链2', '1234546@qq.com', null, 6);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (7, '超链3', '1234546@qq.com', null, 7);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (8, '超链4', '1234546@qq.com', null, 8);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (9, '超链5', '1234546@qq.com', null, 9);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (10, '开源中国', '1234546@qq.com', 'http://www.oschina.net', 1);
+INSERT INTO newsdb.link (link_id, link_name, email, link_url, link_order) VALUES (11, '超链7', '2', '2', 2);
