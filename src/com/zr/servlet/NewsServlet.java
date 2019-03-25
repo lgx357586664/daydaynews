@@ -54,7 +54,7 @@ public class NewsServlet extends HttpServlet {
     }
     protected void queryOneBack(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String newsId = request.getParameter("newsId");
-        News news = service.findNewsById(Integer.parseInt(newsId));
+        News news = service.findNewsByNewsId(Integer.parseInt(newsId));
         List<NewsType> typeList = newsTypeService.findAll();
         request.setAttribute("news",news);
         request.setAttribute("typeList",typeList);
@@ -86,7 +86,6 @@ public class NewsServlet extends HttpServlet {
         News news = new News(Integer.parseInt(newsId),title,content,author,
                 Integer.parseInt(typeId), DateUtil.formatString(publishDate,"yyyy-MM-dd HH:mm:ss")
                 ,isImg, image!=null?image:"",0,ishot);
-        System.out.println(news.getImageUrl());
 
         int i = service.updateNews(news);
         response.getWriter().print(i);

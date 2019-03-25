@@ -19,7 +19,7 @@
               <c:if test="${index.first}">
                   <div class="item active">
                       <a href="NewsServlet?action=queryOne&newsId=${imageNews.newsId}">
-                          <img src="<%=request.getContextPath() %>/newsImg/${imageNews.imageUrl}"
+                          <img src="/${imageNews.imageUrl}"
                                alt="${imageNews.title}"
                                title="${imageNews.title}"></a>
                           <%--  <div class="text-caption">标题 1</div>--%>
@@ -28,7 +28,7 @@
                <c:if test="${!index.first}">
                <div class="item ">
                    <a href="NewsServlet?action=queryOne&newsId=${imageNews.newsId}">
-                       <img src="<%=request.getContextPath() %>/newsImg/${imageNews.imageUrl}"
+                       <img src="/${imageNews.imageUrl}"
                             alt="${imageNews.title}"
                             title="${imageNews.title}"></a>
                </div>

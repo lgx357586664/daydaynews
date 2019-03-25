@@ -60,6 +60,9 @@ public class NewsService {
         dao.addClick(newsId);
         return dao.findNewsById(newsId);
     }
+    public News findNewsByNewsId(int newsId){
+        return dao.findNewsById(newsId);
+    }
     public List<News> getNewsUpAndDown(int newsId){
         List<News> list=new ArrayList<>();
         News upNews = dao.findUpNewsById(newsId);

@@ -78,8 +78,7 @@ public class InitServlet extends HttpServlet {
     private void loginInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 创建一次会话， 如果有会话就直接使用
         HttpSession session = request.getSession();
-        String username = request.getParameter("username");
-        session.setAttribute("username",username);
+        String username = (String)session.getAttribute("username");
         NewsService newsService=new NewsService();
         List<News> newsList = newsService.findAll();
 
@@ -101,13 +100,13 @@ public class InitServlet extends HttpServlet {
             String ipAddr = comment.getIpAddr();
             set.add(ipAddr);
         }
-
+        session.setAttribute("username",username);
         session.setAttribute("newsListCount",newsList.size());
         session.setAttribute("newsTypeListCount",newsTypeList.size());
         session.setAttribute("commentListCount",commentList.size());
         session.setAttribute("linkListCount",linkList.size());
         session.setAttribute("clickCount",sum);
         session.setAttribute("ipCount",set.size());
-        session.setAttribute("currentDate", DateUtil.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss"));
+
     }
 }

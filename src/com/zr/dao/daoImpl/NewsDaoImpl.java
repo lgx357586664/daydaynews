@@ -19,7 +19,7 @@ public class NewsDaoImpl implements NewsDao {
     private QueryRunner queryRunner=new QueryRunner();
     @Override
     public List<News> findAll() {
-        String sql ="select * from news order by publish_date desc";
+        String sql ="select * from news ";
         return getNewsList(sql);
     }
 
@@ -282,7 +282,7 @@ public class NewsDaoImpl implements NewsDao {
     }
     @Override
     public List<News> queryByPage(PageBean pageBean) {
-        String sql="select * from news n,news_type t where n.type_id=t.type_id limit ?,?";
+        String sql="select * from news n,news_type t where n.type_id=t.type_id order by publish_date desc limit ?,?";
         try {
             List<News> newsList = queryRunner.query(JdbcUtils.getConnection(), sql, new BeanListHandler<>(News.class), pageBean.getIndex(), pageBean.getPageCount());
             return newsList;
